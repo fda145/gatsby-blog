@@ -2,11 +2,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Meu Blog Profissional",
-    description: "Blog sobre tecnologia, desenvolvimento web e programação",
-    siteUrl: "https://seu-site.netlify.app", // Você vai atualizar depois
-    author: "Seu Nome",
-    image: "/images/og-image.jpg"
+    title: "Connect Blog Profissional",
+    description: "Connect Blog sobre tecnologia, desenvolvimento web e programação",
+    siteUrl: "https://fda145blog.netlify.app", // Você vai atualizar depois
+    author: "Flavio Agapito",
+    image: "/images/pessoal.jpeg"
   },
   plugins: [
     "gatsby-plugin-image",
@@ -52,8 +52,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://seu-username.github.io/gatsby-blog",
-        sitemap: "https://seu-username.github.io/gatsby-blog/sitemap-index.xml",
+        host: "https://fda145.github.io/gatsby-blog",
+        sitemap: "https://fda145.github.io/gatsby-blog/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }]
       }
     }
