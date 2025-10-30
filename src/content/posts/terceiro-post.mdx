@@ -1,0 +1,78 @@
+---
+title: "CSS-in-JS: Styled Components vs Emotion"
+date: "2024-10-15"
+author: "Pedro Oliveira"
+excerpt: "Compare as duas bibliotecas CSS-in-JS mais populares e descubra qual é a melhor escolha."
+slug: "css-in-js-styled-components-emotion"
+featuredImage: "/images/post-javascript.jpg"
+---
+
+# CSS-in-JS: Styled Components vs Emotion
+
+CSS-in-JS é uma abordagem moderna para estilização de componentes React.
+
+## O que é CSS-in-JS?
+
+CSS-in-JS permite escrever CSS diretamente em JavaScript, trazendo benefícios como:
+
+- **Escopo automático** - Sem conflitos de nomes de classes
+- **Props dinâmicas** - Estilos baseados em props do componente
+- **Type-safety** - Com TypeScript
+- **Dead code elimination** - CSS não utilizado é removido
+
+## Styled Components
+
+### Instalação
+
+```bash
+npm install styled-components
+```
+
+### Vantagens
+
+- API intuitiva
+- Grande comunidade
+- Excelente documentação
+- Server-side rendering fácil
+
+## Emotion
+
+### Instalação
+
+```bash
+npm install @emotion/react @emotion/styled
+```
+
+### Vantagens
+
+- Mais leve e rápido
+- API flexível (styled ou css prop)
+- Melhor performance
+- Framework agnostic
+
+## Comparação
+
+| Característica | Styled Components | Emotion |
+|---------------|-------------------|---------|
+| Bundle size | ~16kb | ~11kb |
+| Performance | Boa | Melhor |
+| API | Styled only | Styled + CSS prop |
+| SSR | Excelente | Excelente |
+| TypeScript | Bom suporte | Bom suporte |
+
+## Qual Escolher?
+
+**Escolha Styled Components se:**
+- Você prefere uma API única e consistente
+- A comunidade grande é importante para você
+- Você já tem experiência com a biblioteca
+
+**Escolha Emotion se:**
+- Performance é crítica
+- Você quer flexibilidade (styled + css prop)
+- Bundle size menor é importante
+- Você está começando um novo projeto
+
+## Conclusão
+
+Ambas as bibliotecas são excelentes escolhas. Emotion tem uma pequena vantagem em performance e tamanho, enquanto Styled Components tem uma comunidade maior e mais madura.

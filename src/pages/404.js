@@ -1,49 +1,75 @@
-import * as React from "react"
-import { Link } from "gatsby"
+// ============================================
+// src/pages/404.js
+// ============================================
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const NotFoundWrapper = styled.div`
+  text-align: center;
+  padding: 4rem 2rem;
+`;
+
+const ErrorCode = styled.h1`
+  font-size: 6rem;
+  color: #667eea;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
+`;
+
+const ErrorTitle = styled.h2`
+  font-size: 2rem;
+  color: #2d3748;
+  margin: 1rem 0;
+`;
+
+const ErrorDescription = styled.p`
+  color: #718096;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+`;
+
+const HomeButton = styled(Link)`
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+`;
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Layout>
+      <NotFoundWrapper>
+        <ErrorCode>404</ErrorCode>
+        <ErrorTitle>Página Não Encontrada</ErrorTitle>
+        <ErrorDescription>
+          Desculpe, a página que você está procurando não existe.
+        </ErrorDescription>
+        <HomeButton to="/">Voltar para Home</HomeButton>
+      </NotFoundWrapper>
+    </Layout>
+  );
+};
 
-export default NotFoundPage
+export const Head = () => (
+  <SEO 
+    title="404 - Página Não Encontrada"
+    description="A página que você procura não existe"
+  />
+);
 
-export const Head = () => <title>Not found</title>
+export default NotFoundPage;
