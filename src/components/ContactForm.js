@@ -176,32 +176,33 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulando envio para um endpoint
-      // Em produção, você pode usar Netlify Forms ou outro serviço
-      await fetch('https://api.exemplo.com/contact', {
+      // Enviar para Netlify Forms
+      const response = await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      }).catch(() => {
-        // Ignora erro já que o endpoint não existe
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contato',
+          'nome': formData.nome,
+          'email': formData.email,
+          'mensagem': formData.mensagem
+        }).toString()
       });
 
-      // Como o endpoint não existe, vamos simular sucesso após 1 segundo
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      setSubmitSuccess(true);
-      setFormData({ nome: '', email: '', mensagem: '' });
-      
-      // Esconde a mensagem de sucesso após 5 segundos
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({ nome: '', email: '', mensagem: '' });
+        
+        // Esconde a mensagem de sucesso após 5 segundos
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      } else {
+        throw new Error('Erro no envio');
+      }
 
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
-      // Em produção, você mostraria uma mensagem de erro apropriada
+      alert('Erro ao enviar mensagem. Tente novamente.');
     } finally {
       setIsSubmitting(false);
     }
@@ -215,7 +216,19 @@ const ContactForm = () => {
         </SuccessMessage>
       )}
 
-      <Form onSubmit={handleSubmit} noValidate>
+      <Form 
+        name="contato"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        {/* Campo oculto necessário para Netlify Forms */}
+        <input type="hidden" name="form-name" value="contato" />
+        
+        {/* Campo honeypot para proteção contra spam */}
+        <input type="hidden" name="bot-field" />
+
         <FormGroup>
           <Label htmlFor="nome">Nome *</Label>
           <Input
