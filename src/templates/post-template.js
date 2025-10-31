@@ -1,5 +1,3 @@
-// src/templates/post-template.js
-
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';

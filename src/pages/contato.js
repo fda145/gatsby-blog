@@ -1,7 +1,3 @@
-// ============================================
-// src/pages/contato.js
-// ============================================
-
 import React from 'react';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';

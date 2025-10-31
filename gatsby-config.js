@@ -1,5 +1,3 @@
-// gatsby-config.js
-
 module.exports = {
   siteMetadata: {
     title: "Connect Blog Profissional",

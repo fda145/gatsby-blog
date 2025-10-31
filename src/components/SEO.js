@@ -1,7 +1,3 @@
-// ============================================
-// src/components/SEO.js
-// ============================================
-
 import React from 'react';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 

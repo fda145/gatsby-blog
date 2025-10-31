@@ -1,7 +1,3 @@
-// ============================================
-// src/pages/404.js
-// ============================================
-
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';

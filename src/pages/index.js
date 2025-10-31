@@ -1,7 +1,3 @@
-// ============================================
-// src/pages/index.js (Home - Lista de Posts)
-// ============================================
-
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';

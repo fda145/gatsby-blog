@@ -1,7 +1,3 @@
-// ============================================
-// src/components/ContactForm.js
-// ============================================
-
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
@@ -279,29 +275,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-// ============================================
-// ALTERNATIVA: Usando Netlify Forms
-// ============================================
-// Se você estiver usando Netlify, pode usar esta versão:
-
-/*
-const ContactFormNetlify = () => {
-  // ... mesmo código de estado e validação ...
-
-  return (
-    <FormWrapper>
-      <Form 
-        name="contact" 
-        method="POST" 
-        data-netlify="true"
-        onSubmit={handleSubmit}
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        
-        {/* ... resto dos campos igual ... *\}
-      </Form>
-    </FormWrapper>
-  );
-};
-*/

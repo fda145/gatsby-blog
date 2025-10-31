@@ -1,7 +1,3 @@
-// ============================================
-// src/hooks/useSiteMetadata.js
-// ============================================
-
 import { useStaticQuery, graphql } from 'gatsby';
 
 export const useSiteMetadata = () => {
